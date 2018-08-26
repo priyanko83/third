@@ -1,3 +1,5 @@
+
+
 FROM microsoft/dotnet:sdk AS build-env
 WORKDIR /app
 
@@ -29,6 +31,10 @@ ENTRYPOINT ["dotnet", "dotnetcorefirst.dll"]
 #     If you are using the Nano Windows Container and have not updated to the Windows Creator Update there is a bug affecting how Windows 10 talks to Containers via “NAT” (Network Address Translation). You must hit the IP of the container directly. You can get the IP address of your container with the following steps:
 #         Run the following command and Copy the container ip address and paste into your browser. (For example, 172.16.240.197)
 #           docker inspect -f "{{ .NetworkSettings.Networks.nat.IPAddress }}" myapp
+
+#       Run these two commands for stoping and removing the already running container (myapp)
+# docker stop myapp
+# docker rm myapp
 
 
 #       Reference: 
